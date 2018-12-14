@@ -2,21 +2,21 @@ package com.ccbfintech.cim.redisclient.controllor;
 
 import com.ccbfintech.cim.redisclient.javaclient.JedisClient;
 import com.ccbfintech.cim.redisclient.javaclient.SocketClient;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-public class RestController {
+@RestController
+public class RestfulController {
 
-    public RestController() throws Exception {
+    public RestfulController() throws Exception {
         socketClient = new SocketClient(redisIp, redisPort);
         jedisClient = new JedisClient(redisIp, redisPort);
     }
 
-    static String redisIp="128.160.185.2";
+    public String redisIp="128.160.185.2";
 
-    static int redisPort=7000;
+    public int redisPort=7000;
 
     public static SocketClient socketClient;
 

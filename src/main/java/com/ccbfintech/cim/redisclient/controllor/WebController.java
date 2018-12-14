@@ -67,8 +67,7 @@ public class WebController {
     }
 
     @RequestMapping("/all")
-    public @ResponseBody
-    List<Cstinfo> all() {
+    public @ResponseBody List<Cstinfo> all() {
         List<Cstinfo> cstinfos = new ArrayList<>();
         redisRepository.findAll().forEach(cstinfos::add);
         return cstinfos;
